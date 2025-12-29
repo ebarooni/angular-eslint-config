@@ -1,0 +1,20 @@
+{
+  "name": "@ebarooni/angular-eslint-config",
+  "version": "1.0.0",
+  "description": "Shared ESLint configuration for Angular projects",
+  "homepage": "https://github.com/ebarooni/angular-eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/ebarooni/angular-eslint-config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebarooni/angular-eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "Ehsan Barooni <mail@barooni.dev> (https://barooni.dev/)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
