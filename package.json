@@ -27,10 +27,13 @@
   },
   "scripts": {
     "build": "npm run rollup -- -c rollup.config.js && cp src/index.js dist/index.js",
+    "eslint": "npx eslint",
     "fmt": "npm run prettier -- . --write",
     "lint": "npm run prettier -- . --check",
+    "prepublishOnly": "npm run lint && npm run test && npm run build",
     "prettier": "npx prettier",
-    "rollup": "npx rollup"
+    "rollup": "npx rollup",
+    "test": "cd test && npm run eslint"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
@@ -45,5 +48,9 @@
   },
   "engines": {
     "node": ">=24.12.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": "true"
   }
 }
