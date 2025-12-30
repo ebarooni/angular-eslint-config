@@ -2,19 +2,41 @@
   "name": "@ebarooni/angular-eslint-config",
   "version": "1.0.0",
   "description": "Shared ESLint configuration for Angular projects",
+  "keywords": [
+    "angular",
+    "eslint",
+    "eslint-config"
+  ],
   "homepage": "https://github.com/ebarooni/angular-eslint-config#readme",
   "bugs": {
     "url": "https://github.com/ebarooni/angular-eslint-config/issues"
   },
+  "license": "MIT",
+  "author": "Ehsan Barooni <mail@barooni.dev> (https://barooni.dev/)",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ebarooni/angular-eslint-config.git"
   },
-  "license": "MIT",
-  "author": "Ehsan Barooni <mail@barooni.dev> (https://barooni.dev/)",
-  "type": "module",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run rollup -- -c rollup.config.js && cp src/index.js dist/index.js",
+    "rollup": "npx rollup"
+  },
+  "devDependencies": {
+    "rollup": "^4.54.0"
+  },
+  "peerDependencies": {
+    "angular-eslint": ">=18.0.0 <22.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "typescript": ">=4.8.4 <6.0.0",
+    "typescript-eslint": "^8.0.0"
   }
 }
