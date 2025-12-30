@@ -33,7 +33,7 @@
     "prepublishOnly": "npm run lint && npm run test && npm run build",
     "prettier": "npx prettier",
     "rollup": "npx rollup",
-    "test": "cd test && npm run eslint"
+    "test": "cd test && npx eslint"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
