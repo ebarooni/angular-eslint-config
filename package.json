@@ -30,7 +30,7 @@
     "eslint": "npx eslint",
     "fmt": "npm run prettier -- . --write",
     "lint": "npm run prettier -- . --check",
-    "prepublishOnly": "npm i && npm run lint && npm run test && npm run build",
+    "prepublishOnly": "npm i && npm run lint && npm run build && npm run test",
     "prettier": "npx prettier",
     "rollup": "npx rollup",
     "test": "npm run test:install && npm run test:lint",
