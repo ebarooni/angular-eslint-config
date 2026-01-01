@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/angular-eslint-config",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Shared ESLint configuration for Angular projects",
   "keywords": [
     "angular",
