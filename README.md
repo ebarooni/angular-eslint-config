@@ -42,15 +42,8 @@ npm i -D @ebarooni/angular-eslint-config angular-eslint eslint eslint-config-pre
 
 ## Usage
 
-### Lint
-
 ```bash
 npx eslint
-```
-
-### Format
-
-```bash
 npx eslint --fix
 ```
 

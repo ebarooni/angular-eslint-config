@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/angular-eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shared ESLint configuration for Angular projects",
   "keywords": [
     "angular",
@@ -30,10 +30,10 @@
     "eslint": "npx eslint",
     "fmt": "npm run prettier -- . --write",
     "lint": "npm run prettier -- . --check",
-    "prepublishOnly": "npm run lint && npm run test && npm run build",
+    "prepublishOnly": "npm i && npm run lint && npm run test && npm run build",
     "prettier": "npx prettier",
     "rollup": "npx rollup",
-    "test": "cd test && npx eslint"
+    "test": "cd test && npm i && npx eslint"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
@@ -51,6 +51,6 @@
   },
   "publishConfig": {
     "access": "public",
-    "provenance": "true"
+    "provenance": true
   }
 }
