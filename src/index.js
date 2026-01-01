@@ -5,7 +5,10 @@ import eslint from "@eslint/js";
 import prettier from "eslint-config-prettier";
 import tseslint from "typescript-eslint";
 
-function defineEslintConfig(customConfigArray = []) {
+/**
+ * @param {...import("typescript-eslint").InfiniteDepthConfigWithExtends} customConfigs
+ */
+function defineEslintConfig(...customConfigs) {
   return tseslint.config(
     {
       extends: [
@@ -25,7 +28,7 @@ function defineEslintConfig(customConfigArray = []) {
       ],
       files: ["**/*.html"],
     },
-    ...customConfigArray,
+    ...customConfigs,
   );
 }
 
