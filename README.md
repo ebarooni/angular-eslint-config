@@ -5,8 +5,21 @@ Shared ESLint configuration for Angular projects.
 ## Installation
 
 ```bash
-npm i -D @ebarooni/angular-eslint-config angular-eslint eslint eslint-config-prettier typescript-eslint
+npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint-config-prettier typescript-eslint
 ```
+
+## Compatibility
+
+| Peer                     | Range                 |
+| ------------------------ | --------------------- |
+| `@eslint/js`             | `^9.0.0 \|\| ^10.0.0` |
+| `angular-eslint`         | `>=18.0.0 <23.0.0`    |
+| `eslint`                 | `^9.0.0 \|\| ^10.0.0` |
+| `eslint-config-prettier` | `^10.0.0`             |
+| `typescript`             | `>=4.8.4 <6.1.0`      |
+| `typescript-eslint`      | `^8.0.0`              |
+
+Angular 22 projects use `angular-eslint` 22 and TypeScript 6.0.x. TypeScript 6.1 and 7 are outside the range because current `typescript-eslint` 8 does not support them. `eslint` 10 is the current stable line; `eslint` 9 remains supported.
 
 ## Setup
 
@@ -50,8 +63,8 @@ npx eslint --fix
 ## Remarks
 
 > [!NOTE]
-> `config(...)` from typescript-eslint is deprecated.
+> `config(...)` from typescript-eslint is deprecated in favor of `defineConfig(...)` from ESLint core (`eslint/config`), which requires ESLint 9.22 or newer.
 >
-> Instead `defineConfig(...)` from ESLint core should be used.
+> This package still calls `tseslint.config()` so the same flat config works on ESLint 9.0 through 10.
 >
 > [https://typescript-eslint.io/packages/typescript-eslint/#config-deprecated](https://typescript-eslint.io/packages/typescript-eslint/#config-deprecated)
