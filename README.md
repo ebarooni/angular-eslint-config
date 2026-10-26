@@ -5,7 +5,7 @@ Shared ESLint configuration for Angular projects.
 ## Installation
 
 ```bash
-npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint-config-prettier typescript-eslint
+npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint-config-prettier typescript typescript-eslint
 ```
 
 ## Compatibility
@@ -20,6 +20,8 @@ npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint
 | `typescript-eslint`      | `^8.0.0`              |
 
 Angular 22 projects use `angular-eslint` 22 and TypeScript 6.0.x. TypeScript 6.1 and 7 are outside the range because current `typescript-eslint` 8 does not support them. `eslint` 10 is the current stable line; `eslint` 9 remains supported.
+
+Keep `@eslint/js` on the same major as `eslint`. npm does not enforce that pairing. ESLint 9 already depends on `@eslint/js`, so the peer is present without listing it again. ESLint 10 does not depend on `@eslint/js`, so it has to be a direct devDependency. The install command above installs it for both.
 
 ## Setup
 
