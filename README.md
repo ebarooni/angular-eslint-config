@@ -23,6 +23,8 @@ Angular 22 projects use `angular-eslint` 22 and TypeScript 6.0.x. TypeScript 6.1
 
 Keep `@eslint/js` on the same major as `eslint`. npm does not enforce that pairing. ESLint 9 already depends on `@eslint/js`, so the peer is present without listing it again. ESLint 10 does not depend on `@eslint/js`, so it has to be a direct devDependency. The install command above installs it for both.
 
+When you move to ESLint 10, Yarn users and users who turn off auto-install-peers must install `@eslint/js`. ESLint 10 does not install it.
+
 ## Setup
 
 1. Create `tsconfig.eslint.json` at the root of the Angular project:
