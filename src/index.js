@@ -20,11 +20,19 @@ import tseslint from "typescript-eslint";
  * Angular 22 uses OnPush when a component omits `changeDetection`.
  * `allowExplicitOnPush: false` reports a redundant `OnPush` value.
  *
+ * An array argument throws. Pass an options object.
+ *
  * @param {DefineEslintConfigOptions} [options]
  * @param {...import("eslint").Linter.Config} overrides
  * @returns {import("eslint").Linter.Config[]}
  */
 function defineEslintConfig(options = {}, ...overrides) {
+  if (Array.isArray(options)) {
+    throw new TypeError(
+      "defineEslintConfig() takes an options object, not an array. Put extra config objects after the options object.",
+    );
+  }
+
   /** @type {import("eslint").Linter.ParserOptions} */
   const parserOptions = {
     projectService: true,

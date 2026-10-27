@@ -68,6 +68,18 @@ export default defineEslintConfig({
 });
 ```
 
+The old array call throws. Pass an options object.
+
 Delete `tsconfig.eslint.json` when no other file uses it.
+
+2.0.0 also enables these rules. They report errors in existing code:
+
+- `@angular-eslint/prefer-on-push-component-change-detection` with `allowExplicitOnPush: false`. An explicit `ChangeDetectionStrategy.OnPush` is an error. The rule can remove it.
+- `@angular-eslint/no-uncalled-signals`
+- `@angular-eslint/prefer-signals`
+- `@angular-eslint/prefer-output-readonly`
+- `@angular-eslint/template/prefer-ngsrc`
+- `@angular-eslint/template/no-duplicate-attributes`
+- `@angular-eslint/template/button-has-type`
 
 This package is ESM only. It does not ship a CommonJS build. Use `import`. `require()` returns a module object, not the function.
