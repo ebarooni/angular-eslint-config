@@ -12,7 +12,7 @@ npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint
 
 Supported versions: angular-eslint 22, ESLint 9, @eslint/js 9, eslint-config-prettier 10, TypeScript 6.0, and typescript-eslint 8.
 
-Version 2.0.0 does not support Angular 18 to 21 or TypeScript 5.
+Version 2.0.0 does not support Angular 18 to 21 or TypeScript 5. Use version 1.0.0 for those versions.
 
 ## Setup
 
