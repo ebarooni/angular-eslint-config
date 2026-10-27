@@ -10,41 +10,25 @@ npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint
 
 ## Compatibility
 
-Supported versions: angular-eslint 22, ESLint 9, @eslint/js 9, eslint-config-prettier 10, TypeScript 6.0, and typescript-eslint 8.
+Supported versions: angular-eslint 22, ESLint 9.22 or 10, @eslint/js 9.22 or 10, eslint-config-prettier 10, TypeScript 6.0, and typescript-eslint 8.58.
 
-Version 2.0.0 does not support Angular 18 to 21 or TypeScript 5. Use version 1.0.0 for those versions.
+Use 1.x for Angular 18-21 / TypeScript 5.
 
 ## Setup
 
-1. Create `tsconfig.eslint.json` at the root of the Angular project:
+Create `eslint.config.mjs` in the Angular project:
 
-   ```json
-   {
-     "extends": "./tsconfig.app.json",
-     "compilerOptions": {
-       "types": ["vitest/globals"]
-     },
-     "include": ["src/main.ts", "src/**/*.ts", "src/**/*.spec.ts"],
-     "exclude": []
-   }
-   ```
+```javascript
+import defineEslintConfig from "@ebarooni/angular-eslint-config";
 
-2. Create the ESLint configurations file (`eslint.config.mjs`):
+export default defineEslintConfig({
+  tsconfigRootDir: import.meta.dirname,
+});
+```
 
-   ```javascript
-   import defineEslintConfig from "@ebarooni/angular-eslint-config";
+`defineEslintConfig()` with no arguments also works. The config uses the TypeScript project service. The config ignores `.angular/`, `dist/` and `coverage/`.
 
-   export default defineEslintConfig([
-     {
-       languageOptions: {
-         parserOptions: {
-           project: ["tsconfig.eslint.json"],
-           tsconfigRootDir: import.meta.dirname,
-         },
-       },
-     },
-   ]);
-   ```
+Pass extra config objects after the options object.
 
 ## Usage
 
@@ -53,11 +37,37 @@ npx eslint
 npx eslint --fix
 ```
 
-## Remarks
+## Migration to 2.0.0
 
-> [!NOTE]
-> `config(...)` from typescript-eslint is deprecated in favor of `defineConfig(...)` from ESLint core (`eslint/config`), which requires ESLint 9.22 or newer.
->
-> This package calls `tseslint.config()`. This works on ESLint 9.
->
-> [https://typescript-eslint.io/packages/typescript-eslint/#config-deprecated](https://typescript-eslint.io/packages/typescript-eslint/#config-deprecated)
+2.0.0 changes the call.
+
+Old call:
+
+```javascript
+import defineEslintConfig from "@ebarooni/angular-eslint-config";
+
+export default defineEslintConfig([
+  {
+    languageOptions: {
+      parserOptions: {
+        project: ["tsconfig.eslint.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+]);
+```
+
+New call:
+
+```javascript
+import defineEslintConfig from "@ebarooni/angular-eslint-config";
+
+export default defineEslintConfig({
+  tsconfigRootDir: import.meta.dirname,
+});
+```
+
+Delete `tsconfig.eslint.json` when no other file uses it.
+
+This package is ESM only. It does not ship a CommonJS build. Use `import`. `require()` returns a module object, not the function.
