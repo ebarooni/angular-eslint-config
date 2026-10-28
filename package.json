@@ -1,6 +1,6 @@
 {
   "name": "@ebarooni/angular-eslint-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Shared ESLint configuration for Angular projects",
   "keywords": [
     "angular",
@@ -12,13 +12,16 @@
     "url": "https://github.com/ebarooni/angular-eslint-config/issues"
   },
   "license": "MIT",
-  "author": "Ehsan Barooni <mail@barooni.dev> (https://barooni.dev/)",
+  "author": "Ehsan Barooni",
   "files": [
     "dist"
   ],
   "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "type": "module",
   "repository": {
@@ -26,30 +29,30 @@
     "url": "git+https://github.com/ebarooni/angular-eslint-config.git"
   },
   "scripts": {
-    "build": "npm run rollup -- -c rollup.config.js && cp src/index.js dist/index.js",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && cp src/index.js dist/index.js",
     "eslint": "npx eslint",
     "fmt": "npm run prettier -- . --write",
     "lint": "npm run prettier -- . --check",
-    "prepublishOnly": "npm i && npm run lint && npm run build && npm run test",
+    "prepublishOnly": "npm ci && npm run lint && npm run build && npm run test",
     "prettier": "npx prettier",
-    "rollup": "npx rollup",
     "test": "npm run test:install && npm run test:lint",
-    "test:install": "cd test && npm i",
+    "test:install": "cd test && npm ci",
     "test:lint": "cd test && npx eslint"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
-    "rollup": "^4.54.0"
+    "typescript": ">=6.0.0 <6.1.0"
   },
   "peerDependencies": {
-    "angular-eslint": ">=18.0.0 <22.0.0",
-    "eslint": "^9.0.0",
+    "@eslint/js": "^9.22.0 || ^10.0.0",
+    "angular-eslint": "^22.0.0",
+    "eslint": "^9.22.0 || ^10.0.0",
     "eslint-config-prettier": "^10.0.0",
-    "typescript": ">=4.8.4 <6.0.0",
-    "typescript-eslint": "^8.0.0"
+    "typescript": ">=6.0.0 <6.1.0",
+    "typescript-eslint": "^8.58.0"
   },
   "engines": {
-    "node": ">=24.12.0"
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
   },
   "publishConfig": {
     "access": "public",
