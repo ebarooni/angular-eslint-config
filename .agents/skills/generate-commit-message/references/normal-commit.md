@@ -16,6 +16,4 @@ Co-authored-by: Ehsan Barooni <66495214+ebarooni@users.noreply.github.com>
 - Subject: imperative, lowercase start, no trailing period, at most 72 characters.
 - Body (optional): why, and how behavior differs from before. Wrap at 72 characters.
 - Footer (optional): `BREAKING CHANGE: <what changed, what callers must do>`.
-- End with one empty line, then exactly this trailer. Do not add any other `Co-authored-by` line. Do not use `barooni.eh@gmail.com` or `mail@barooni.dev`. Write the trailer yourself. If it is missing, the commit hook adds the wrong email.
-
-`Co-authored-by: Ehsan Barooni <66495214+ebarooni@users.noreply.github.com>`
+- End with one empty line, then exactly `Co-authored-by: Ehsan Barooni <66495214+ebarooni@users.noreply.github.com>`. The message has no other `Co-authored-by` line.

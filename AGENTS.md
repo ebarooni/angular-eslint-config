@@ -8,9 +8,7 @@ Shared ESLint configuration for Angular. Setup and the public API are in [README
 - Comments say why, not what.
 - Names state meaning. Do not use cryptic names (`d`, `m`, `bm`).
 - Aim for about 250 lines or fewer in a hand-written file. Split only where the split follows the real structure.
-- Every commit message ends with this trailer, after one empty line:
-  `Co-authored-by: Ehsan Barooni <66495214+ebarooni@users.noreply.github.com>`
-  Do not add any other `Co-authored-by` line. Do not use `barooni.eh@gmail.com` or `mail@barooni.dev`. Write the trailer yourself. If it is missing, the commit hook adds the wrong email.
+- Every commit ends, after one empty line, with exactly `Co-authored-by: Ehsan Barooni <66495214+ebarooni@users.noreply.github.com>`. It has no other `Co-authored-by` line.
 - Ehsan reviews and merges every pull request. Do not merge, publish to npm, push tags, or trigger or dispatch CI.
 - Before handoff, reply to or fix every review comment, including cursor[bot], and mark each thread resolved.
 - A new skill starts at metadata version `1.0`. Bump that version once per pull request that changes a merged skill.

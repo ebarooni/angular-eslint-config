@@ -12,7 +12,7 @@
     "url": "https://github.com/ebarooni/angular-eslint-config/issues"
   },
   "license": "MIT",
-  "author": "Ehsan Barooni <mail@barooni.dev> (https://barooni.dev/)",
+  "author": "Ehsan Barooni",
   "files": [
     "dist"
   ],
