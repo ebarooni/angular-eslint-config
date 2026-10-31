@@ -43,9 +43,11 @@ npx eslint --fix
 
 The `test` directory is a small Angular 22 app. It uses this package.
 
-`npm run test` at the root installs that app and runs ESLint there. It does not call the scripts below. `npm run lint` in `test` runs the same ESLint command. The lint result is the same.
+`npm run test` at the root builds this package, installs that app, and runs ESLint there. It does not call the scripts below. `npm run lint` in `test` runs the same ESLint command. The lint result is the same.
 
-Build this package before you lint the test app. The package entry is `dist`.
+Build this package before you lint the test app. The package entry is `dist`. `dist` is not in git.
+
+An old `dist` from 1.0 causes `Config (unnamed): Unexpected key "tsconfigRootDir"`. The 1.0 function puts the options object into the ESLint config. That object has `tsconfigRootDir` at the top level. Run `npm run build`. The 2.0 file puts the key under `languageOptions.parserOptions`. `npm run test` checks that placement.
 
 ```bash
 npm ci

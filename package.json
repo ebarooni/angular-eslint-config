@@ -37,9 +37,9 @@
     "lint": "npm run prettier -- . --check",
     "prepublishOnly": "npm ci && npm run lint && npm run build && npm run test",
     "prettier": "npx prettier",
-    "test": "npm run test:install && npm run test:lint",
+    "test": "npm run build && npm run test:install && npm run test:lint",
     "test:install": "cd test && npm ci",
-    "test:lint": "cd test && npx eslint"
+    "test:lint": "node scripts/check-fixture-config.mjs && cd test && npx eslint"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
