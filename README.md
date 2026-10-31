@@ -41,7 +41,9 @@ npx eslint --fix
 
 ## Test project
 
-The `test` directory is a small Angular 22 app. It uses this package. `npm run test` at the root installs that app and runs ESLint there. It does not call the scripts below. Those scripts run the same ESLint command, so the result is the same.
+The `test` directory is a small Angular 22 app. It uses this package.
+
+`npm run test` at the root installs that app and runs ESLint there. It does not call the scripts below. `npm run lint` in `test` runs the same ESLint command. The lint result is the same.
 
 Build this package before you lint the test app. The package entry is `dist`.
 
@@ -55,7 +57,7 @@ npm run format:check
 npm run format
 ```
 
-`npm run lint` in `test` runs ESLint. `npm run format` writes Prettier changes. `npm run format:check` only checks them. The root package has the same `format` and `format:check` scripts.
+`npm run format` writes Prettier changes. `npm run format:check` only checks them. The root package has the same `format` and `format:check` scripts.
 
 ## Migration to 2.0.0
 
