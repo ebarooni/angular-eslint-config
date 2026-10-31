@@ -33,7 +33,6 @@
     "eslint": "npx eslint",
     "format": "npm run prettier -- . --write",
     "format:check": "npm run prettier -- . --check",
-    "lint": "npm run prettier -- . --check",
     "prepublishOnly": "npm ci && npm run lint && npm run build && npm run test",
     "prettier": "npx prettier",
     "test": "npm run build && npm run test:install && npm run test:lint",
