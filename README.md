@@ -12,6 +12,8 @@ npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint
 
 Supported versions: angular-eslint 22, ESLint 10, @eslint/js 10, eslint-config-prettier 10, TypeScript 6.0, and typescript-eslint 8.58.
 
+Node.js in `.nvmrc` is 24.22.2. The `engines` field allows Node.js `^22.22.3`, `^24.15.0`, or `>=26.0.0`.
+
 Use 1.x for Angular 18-21 / TypeScript 5.
 
 ## Setup
@@ -36,6 +38,24 @@ Pass extra config objects after the options object.
 npx eslint
 npx eslint --fix
 ```
+
+## Test project
+
+The `test` directory is a small Angular 22 app. It uses this package. `npm run test` at the root installs that app and runs ESLint there. It does not call the scripts below. Those scripts run the same ESLint command, so the result is the same.
+
+Build this package before you lint the test app. The package entry is `dist`.
+
+```bash
+npm ci
+npm run build
+cd test
+npm ci
+npm run lint
+npm run format:check
+npm run format
+```
+
+`npm run lint` in `test` runs ESLint. `npm run format` writes Prettier changes. `npm run format:check` only checks them. The root package has the same `format` and `format:check` scripts.
 
 ## Migration to 2.0.0
 
