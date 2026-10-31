@@ -10,7 +10,7 @@ npm i -D @ebarooni/angular-eslint-config @eslint/js angular-eslint eslint eslint
 
 ## Compatibility
 
-Supported versions: angular-eslint 22, ESLint 9.22 or 10, @eslint/js 9.22 or 10, eslint-config-prettier 10, TypeScript 6.0, and typescript-eslint 8.58.
+Supported versions: angular-eslint 22, ESLint 10, @eslint/js 10, eslint-config-prettier 10, TypeScript 6.0, and typescript-eslint 8.58.
 
 Use 1.x for Angular 18-21 / TypeScript 5.
 
@@ -38,6 +38,8 @@ npx eslint --fix
 ```
 
 ## Migration to 2.0.0
+
+2.0.0 uses ESLint 10. It does not support ESLint 9.
 
 2.0.0 changes the call.
 
