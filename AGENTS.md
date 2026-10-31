@@ -19,4 +19,4 @@ Shared ESLint configuration for Angular. Setup and the public API are in [README
 - Support only the current Angular major and the current TypeScript major. Today that is Angular 22 and TypeScript 6. Do not add support for older majors.
 - Do not add rules that enforce a component or directive selector prefix.
 - Ehsan prefers OnPush change detection. Do not relax `allowExplicitOnPush`.
-- No workflow runs on a pull request. Run `npm run lint`, `npm run build`, and `npm run test` before handoff.
+- No workflow runs on a pull request. Run `npm run format:check`, `npm run build`, and `npm run test` before handoff.
