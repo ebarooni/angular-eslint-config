@@ -31,7 +31,6 @@
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json && cp src/index.js dist/index.js",
     "eslint": "npx eslint",
-    "fmt": "npm run prettier -- . --write",
     "format": "npm run prettier -- . --write",
     "format:check": "npm run prettier -- . --check",
     "lint": "npm run prettier -- . --check",
